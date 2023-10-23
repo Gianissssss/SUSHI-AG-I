@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+.navegador {
+    padding: 20px;
+}
+
+span {
+    border-style: solid;
+    border-color: blueviolet;
+    border-width: 20px;
+    color: aqua;
+}
+
+.contenido {
+    border-style: solid;
+    border-color: aqua;
+    color: black;
+    border-width: 60px;
+    margin-bottom: 3px;
+    
+}
