@@ -5,35 +5,218 @@
     font-size: small;
 }
 
-body {
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    background-image: url(imagenes/fondo\ naranja.png);
-    background-attachment: fixed;
-    background-size: cover;
-    justify-content: center;
-    background-position: top;
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+}
+section nav{
+   display: flex;
+   justify-content: space-around;
+   align-items: center; 
+   position: fixed;
+   right: 0;
+   left: 0;
+   background: white;
+   z-index: 1000;
 }
 
-.links .navbar-nav .nav-item .nav-link{
+section nav .logo img{
+    width: 60px;
+    cursor: pointer;
+    margin: 7px 0;
+}
+
+section nav ul{
+    list-style: none;
+}
+
+section nav ul li{
+    display: inline-block;
+    margin: 0 15px;
+}
+
+section nav ul li a{
+    text-decoration: none;
     color: black;
-    font-weight: bold;
-}
- 
-nav {
-    background-color: rgba(2, 249, 125, 0.201);
+    font-weight: 500;
+    font-size: 17px;
+    transition: 0.1s;
 }
 
-.inicio {
-    padding-top: 100px;
+section nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: orangered;
+    display: block;
+    transition: 0.2s linear;
+}
+
+section nav ul li a:hover::after{
+    width: 100%;
+}
+
+section nav ul li a:hover{
+    color: orangered;
+}
+
+section nav .icons i{
+    font-size: 18px;
+    color: black;
+    margin:0 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+section nav .icons i:hover{
+   color: orangered;
+}
+/*inicio*/
+section .inicio{
+    background-color: #070709;
+    height: 550px;
     display: flex;
     align-items: center;
-    max-width: 100%;
+    justify-content: space-around;
+    position: relative;
 }
 
-.inicio img {
-    margin: 20px;
-    width: 55%;
+section .inicio .inicio-img img{
+    width: 700px;
+    height: 550px;
+    position: relative;
+}
+section .inicio .inicio-p{
+    margin-left: 10px;
+    color: white;
+    margin-right: 10px;
+}
+section .inicio .inicio-p p{
+    font-size: 30px;
+    position: relative;
+    font-weight: 300;
+    font-family: 'Merriweather';
+    letter-spacing: 2px;
+    text-align: center;
 }
 
+/*menu*/
+.menu{
+    background-image: url(imagenes/fondo\ naranja.png);
+    width: 100%;
+    padding: 70px 0;
+}
+
+.menu h1{
+    font-size: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.menu .menu-box{
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap:15px;
+}
+
+.menu .menu-box .menu-card{
+    background-color: aliceblue;
+    width: 300px;
+    height: 430px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px black;
+}
+.menu .menu-box .menu-card .menu-img{
+    width: 270px;
+    height: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.menu .menu-box .menu-card .menu-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+}
+.menu .menu-box .menu-card .menu-img:hover img{
+    transform: scale(1.1);
+}
+
+.menu .menu-box .menu-card .small-card{
+    width: 45px;
+    height: 45px;
+    float: right;
+    position: relative;
+    top: -240px;
+    right: -8px;
+    opacity: 0;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+
+.menu .menu-box .menu-card:hover .small-card{
+    position: relative;
+    top: -200px;
+    right: 10px;
+    opacity: 1;
+}
+.menu .menu-box .menu-card .small-card i{
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 50px;
+    color: black;
+    cursor: pointer;
+    text-shadow: 0 0 6px black;
+    transition: 0.2s;
+}
+
+.menu .menu-box .menu-card .small-card i:hover{
+    color: orangered;
+}
+.menu .menu-box .menu-card .menu-info h2{
+    width: 60%;
+    text-align: center;
+    margin: 10px auto 10px auto;
+    font-size: 25px;
+    color: orangered;
+}
+
+.menu .menu-box .menu-card .menu-info p{
+    text-align: center;
+    margin-top: 8px;
+    line-height: 21px;
+}
+
+.menu .menu-box .menu-card .menu-info h3{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.menu .menu-box .menu-card .menu-info .menu-icon{
+    color: orangered;
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+ .menu .menu-box .menu-card .menu-info .menu-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background: black;
+    border-radius: 20px;
+    padding: 8px 10px;
+    margin: 0 80px;
+    transition: 0.3s;
+} 

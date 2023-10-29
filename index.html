@@ -6,49 +6,230 @@
     <link rel="stylesheet" href="estilos.css">
     <link rel="icon" type="image/x-icon"  href="imagenes/ilustracion.png">
     <!--enlace css de bootstrap-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>SUSHI AGÜI</title>
 </head>
 <body>
     <!--navegador-->
-    <nav class="navbar navbar-expand-sm navbar-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#inicio"><img src="imagenes/logo fondo negro.png" width="60" height="60" alt="logo-sushi"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <div class="links d-flex ml-auto">
-                    <ul class="navbar-nav me-auto mb-0 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#inicio">INICIO</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#menu">MENÚ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#servicios">SERVICIOS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#merch">MERCH</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contacto">CONTACTO</a>
-                        </li>
-                    </ul>
-                </div>
+    <section id="navbar">
+        <nav class="fixed-top">
+            <div class="logo">
+                <img src="imagenes/logo fondo negro.png" alt="">
             </div>
+            <ul>
+                <li><a href="#inicio">INICIO</a></li>
+                <li><a href="#menu">MENÚ</a></li>
+                <li><a href="#servicios">SERVICIOS</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+                <li><a href="#merch">MERCH</a></li>
+            </ul>
+            <div class="icons">
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </nav>
+
+     <!--inicio-->
+     <div class="inicio">
+        <div class="inicio-img" > 
+            <img src="imagenes/img-inicio.png" alt="image-sushi">
         </div>
-    </nav>
-        
-    
-    
-    <!--inicio-->
-    <div class="container-fluid inicio">
-            <img src="imagenes/inicio-descripcion.webp" alt="image-sushi">
-            <p class="descripcion">En sushi agui nos caracterizamos por mantener la tradicion del sushi, realizados con productos de primera calidad, con salmon cazados a lanza en los rios de alaska.</p>
+        <div class="inicio-p"  data-aos="fade-up" data-aos-duration="2000">
+            <p class="descripcion">En Sushi Agüi nos caracterizamos por mantener la tradición del sushi, ofreciendo productos de primera calidad y elaborando piezas que le dan sabor a tu paladar</p>
+        </div>
+    </div>
+    </section>
+
+    <!--menu-->
+    <div class="menu" id="menu">
+        <h1 data-aos="fade-down" data-aos-duration="2000">Nuestro Menú</h1>
+        <div class="menu-box" data-aos="zoom-in" data-aos-duration="2000">
+            <!--primer producto-->
+           <div class="menu-card">
+            <div class="menu-img">
+                <img src="imagenes/pieza-sushi.jpg" alt="">
+            </div>
+            <div class="small-card">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="menu-info">
+                <h2>Nombre</h2>
+                <p>info del producto</p>
+                <h3>$1000</h3>
+                <div class="menu-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="menu-btn">Comprar</a>
+            </div>
+           </div> 
+           <!--segundo producto-->
+           <div class="menu-card">
+            <div class="menu-img">
+                <img src="imagenes/pieza-sushi.jpg" alt="">
+            </div>
+            <div class="small-card">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="menu-info">
+                <h2>Nombre</h2>
+                <p>info del producto</p>
+                <h3>$1000</h3>
+                <div class="menu-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="menu-btn">Comprar</a>
+            </div>
+           </div> 
+           <!--tercer producto-->
+           <div class="menu-card">
+            <div class="menu-img">
+                <img src="imagenes/pieza-sushi.jpg" alt="">
+            </div>
+            <div class="small-card">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="menu-info">
+                <h2>Nombre</h2>
+                <p>info del producto</p>
+                <h3>$1000</h3>
+                <div class="menu-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="menu-btn">Comprar</a>
+            </div>
+           </div> 
+           <!--cuarto producto-->
+           <div class="menu-card">
+            <div class="menu-img">
+                <img src="imagenes/pieza-sushi.jpg" alt="">
+            </div>
+            <div class="small-card">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="menu-info">
+                <h2>Nombre</h2>
+                <p>info del producto</p>
+                <h3>$1000</h3>
+                <div class="menu-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="menu-btn">Comprar</a>
+            </div>
+           </div> 
+           <!--quinto producto-->
+           <div class="menu-card">
+            <div class="menu-img">
+                <img src="imagenes/pieza-sushi.jpg" alt="">
+            </div>
+            <div class="small-card">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="menu-info">
+                <h2>Nombre</h2>
+                <p>info del producto</p>
+                <h3>$1000</h3>
+                <div class="menu-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="menu-btn">Comprar</a>
+            </div>
+           </div> 
+           <!--sexto producto-->
+           <div class="menu-card">
+            <div class="menu-img">
+                <img src="imagenes/pieza-sushi.jpg" alt="">
+            </div>
+            <div class="small-card">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="menu-info">
+                <h2>Nombre</h2>
+                <p>info del producto</p>
+                <h3>$1000</h3>
+                <div class="menu-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="menu-btn">Comprar</a>
+            </div>
+           </div> 
+           <!--septimo producto-->
+           <div class="menu-card">
+            <div class="menu-img">
+                <img src="imagenes/pieza-sushi.jpg" alt="">
+            </div>
+            <div class="small-card">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="menu-info">
+                <h2>Nombre</h2>
+                <p>info del producto</p>
+                <h3>$1000</h3>
+                <div class="menu-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="menu-btn">Comprar</a>
+            </div>
+           </div> 
+           <!--octavo producto-->
+           <div class="menu-card">
+            <div class="menu-img">
+                <img src="imagenes/pieza-sushi.jpg" alt="">
+            </div>
+            <div class="small-card">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="menu-info">
+                <h2>Nombre</h2>
+                <p>info del producto</p>
+                <h3>$1000</h3>
+                <div class="menu-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="menu-btn">Comprar</a>
+            </div>
+           </div> 
+        </div>  
     </div>
     <!--enlace de javascript de bootstrap-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </body>
