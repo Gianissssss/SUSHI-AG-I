@@ -11,10 +11,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>SUSHI AGÜI</title>
+    <link rel="stylesheet" href="menu.html">
 </head>
 <body>
     <!--navegador-->
-    <section id="navbar">
+ 
         <nav class="fixed-top">
             <div class="logo">
                 <img src="imagenes/logo fondo negro.png" alt="">
@@ -32,16 +33,51 @@
             </div>
         </nav>
 
-     <!--inicio-->
-     <div class="inicio">
-        <div class="inicio-img" > 
-            <img src="imagenes/img-inicio.png" alt="image-sushi">
-        </div>
-        <div class="inicio-p"  data-aos="fade-up" data-aos-duration="2000">
-            <p class="descripcion">En Sushi Agüi nos caracterizamos por mantener la tradición del sushi, ofreciendo productos de primera calidad y elaborando piezas que le dan sabor a tu paladar</p>
+     <!-- inicio -->
+    
+    <div class="banner">
+        <div class="banner-description">
+            <img src="imagenes/logo sin fondo.png" width="150" height="90" data-aos="fade-up" data-aos-duration="2000" alt="">
+            <div data-aos="fade-up" data-aos-duration="2000" class="line" ></div>
+            <h2 data-aos="fade-up" data-aos-duration="2000">En Sushi Agüi nos caracterizamos por mantener la tradición del sushi, ofreciendo productos de primera calidad y elaborando piezas que le dan sabor a tu paladar </h2>
         </div>
     </div>
-    </section>
+    <div class="curveado">
+        <img src="imagenes/wave.svg" alt="">
+    </div>
+    <!--section 1-->
+    <div class="seccion" id="servicios">
+     <section class="events">
+        <div class="title">
+            <h1 data-aos="fade-right" data-aos-duration="2000">Nuestros servicios</h1>
+            <div class="line"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="imagenes/icon-calidad.gif" width="60"  alt="">
+                <h4 data-aos="flip-left" data-aos-duration="2000">Calidad</h4>
+                <p data-aos="flip-left" data-aos-duration="2000">Nos aseguramos de que el cliente reciba trato de calidad</p>
+            </div>
+            <div class="col">
+                <img src="imagenes/icon-tiempo.gif" width="60" alt="">
+                <h4  data-aos="flip-left" data-aos-duration="2000">Tiempo de demora</h4>
+                <p  data-aos="flip-left" data-aos-duration="2000">Ofrecemos nuestros productos de manera rapida</p>
+            </div>
+            <div class="col">
+                <img src="imagenes/icon-user.gif" width="60" alt="">
+                <h4  data-aos="flip-left" data-aos-duration="2000">Empleados</h4>
+                <p  data-aos="flip-left" data-aos-duration="2000">Nuestro personal esta totalmente capacitado para atenderlo</p>
+            </div>
+            <div class="col">
+                <img src="imagenes/icon-fecha.gif" width="60" alt="">
+                <h4  data-aos="flip-left" data-aos-duration="2000">Horario</h4>
+                <p  data-aos="flip-left" data-aos-duration="2000">Nuestro servicio se dedica de lunes a sabado de 08:00hs a 20:00hs</p>
+            </div>
+        </div>
+     </section>
+    </div>
+
+
 
     <!--menu-->
     <div class="menu" id="menu">
@@ -52,9 +88,6 @@
             <div class="menu-img">
                 <img src="imagenes/pieza-sushi.jpg" alt="">
             </div>
-            <div class="small-card">
-                <i class="fa-solid fa-heart"></i>
-            </div>
             <div class="menu-info">
                 <h2>Nombre</h2>
                 <p>info del producto</p>
@@ -65,8 +98,10 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
-                </div>
-                <a href="#" class="menu-btn">Comprar</a>
+                </div> 
+                <a href="#" class="menu-btn-heart"><i class="fa-solid fa-heart"></i></a>
+                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" class="menu-btn">COMPRAR</a>
             </div>
            </div> 
            <!--segundo producto-->
@@ -74,9 +109,6 @@
             <div class="menu-img">
                 <img src="imagenes/pieza-sushi.jpg" alt="">
             </div>
-            <div class="small-card">
-                <i class="fa-solid fa-heart"></i>
-            </div>
             <div class="menu-info">
                 <h2>Nombre</h2>
                 <p>info del producto</p>
@@ -88,7 +120,9 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </div>
-                <a href="#" class="menu-btn">Comprar</a>
+                <a href="#" class="menu-btn-heart"><i class="fa-solid fa-heart"></i></a>
+                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" class="menu-btn">COMPRAR</a>
             </div>
            </div> 
            <!--tercer producto-->
@@ -96,9 +130,6 @@
             <div class="menu-img">
                 <img src="imagenes/pieza-sushi.jpg" alt="">
             </div>
-            <div class="small-card">
-                <i class="fa-solid fa-heart"></i>
-            </div>
             <div class="menu-info">
                 <h2>Nombre</h2>
                 <p>info del producto</p>
@@ -110,7 +141,9 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </div>
-                <a href="#" class="menu-btn">Comprar</a>
+                <a href="#" class="menu-btn-heart"><i class="fa-solid fa-heart"></i></a>
+                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" class="menu-btn">COMPRAR</a>
             </div>
            </div> 
            <!--cuarto producto-->
@@ -118,9 +151,6 @@
             <div class="menu-img">
                 <img src="imagenes/pieza-sushi.jpg" alt="">
             </div>
-            <div class="small-card">
-                <i class="fa-solid fa-heart"></i>
-            </div>
             <div class="menu-info">
                 <h2>Nombre</h2>
                 <p>info del producto</p>
@@ -132,7 +162,9 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </div>
-                <a href="#" class="menu-btn">Comprar</a>
+                <a href="#" class="menu-btn-heart"><i class="fa-solid fa-heart"></i></a>
+                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" class="menu-btn">COMPRAR</a>
             </div>
            </div> 
            <!--quinto producto-->
@@ -140,9 +172,6 @@
             <div class="menu-img">
                 <img src="imagenes/pieza-sushi.jpg" alt="">
             </div>
-            <div class="small-card">
-                <i class="fa-solid fa-heart"></i>
-            </div>
             <div class="menu-info">
                 <h2>Nombre</h2>
                 <p>info del producto</p>
@@ -154,7 +183,9 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </div>
-                <a href="#" class="menu-btn">Comprar</a>
+                <a href="#" class="menu-btn-heart"><i class="fa-solid fa-heart"></i></a>
+                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" class="menu-btn">COMPRAR</a>
             </div>
            </div> 
            <!--sexto producto-->
@@ -162,9 +193,6 @@
             <div class="menu-img">
                 <img src="imagenes/pieza-sushi.jpg" alt="">
             </div>
-            <div class="small-card">
-                <i class="fa-solid fa-heart"></i>
-            </div>
             <div class="menu-info">
                 <h2>Nombre</h2>
                 <p>info del producto</p>
@@ -176,7 +204,9 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </div>
-                <a href="#" class="menu-btn">Comprar</a>
+                <a href="#" class="menu-btn-heart"><i class="fa-solid fa-heart"></i></a>
+                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" class="menu-btn">COMPRAR</a>
             </div>
            </div> 
            <!--septimo producto-->
@@ -184,9 +214,6 @@
             <div class="menu-img">
                 <img src="imagenes/pieza-sushi.jpg" alt="">
             </div>
-            <div class="small-card">
-                <i class="fa-solid fa-heart"></i>
-            </div>
             <div class="menu-info">
                 <h2>Nombre</h2>
                 <p>info del producto</p>
@@ -198,7 +225,9 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </div>
-                <a href="#" class="menu-btn">Comprar</a>
+                <a href="#" class="menu-btn-heart"><i class="fa-solid fa-heart"></i></a>
+                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" class="menu-btn">COMPRAR</a>
             </div>
            </div> 
            <!--octavo producto-->
@@ -206,8 +235,47 @@
             <div class="menu-img">
                 <img src="imagenes/pieza-sushi.jpg" alt="">
             </div>
-            <div class="small-card">
-                <i class="fa-solid fa-heart"></i>
+            <div class="menu-info">
+                <h2>Nombre</h2>
+                <p>info del producto</p>
+                <h3>$1000</h3>
+                <div class="menu-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <a href="#" class="menu-btn-heart"><i class="fa-solid fa-heart"></i></a>
+                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" class="menu-btn">COMPRAR</a>
+            </div>
+           </div> 
+            <!--noveno producto-->
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img src="imagenes/pieza-sushi.jpg" alt="">
+                </div>
+                <div class="menu-info">
+                    <h2>Nombre</h2>
+                    <p>info del producto</p>
+                    <h3>$1000</h3>
+                    <div class="menu-icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <a href="#" class="menu-btn-heart"><i class="fa-solid fa-heart"></i></a>
+                    <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="#" class="menu-btn">COMPRAR</a>
+                </div>
+               </div> 
+                <!--decimo producto-->
+           <div class="menu-card">
+            <div class="menu-img">
+                <img src="imagenes/pieza-sushi.jpg" alt="">
             </div>
             <div class="menu-info">
                 <h2>Nombre</h2>
@@ -220,11 +288,50 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </div>
-                <a href="#" class="menu-btn">Comprar</a>
+                <a href="#" class="menu-btn-heart"><i class="fa-solid fa-heart"></i></a>
+                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" class="menu-btn">COMPRAR</a>
             </div>
            </div> 
         </div>  
     </div>
+
+
+    <!--footer-->
+    <footer class="footer">
+        <div class="container-f">
+         <div class="row-f">
+            <div class="footer-col">
+                <img src="imagenes/logo sin fondo.png" style="margin:5px;" width="140" height="90" alt="">
+              </div>
+           <div class="footer-col">
+             <h4>SUSHI AGÜI COMPANY</h4>
+             <ul class="ul-f">
+               <li><a href="#inicio">INICIO</a></li>
+               <li><a href="#menu">MENU</a></li>
+             </ul>
+           </div>
+           <div class="footer-col">
+             <h4>Tienda online</h4>
+             <ul class="ul-f">
+               <li><a href="#menu>MENÚ</a></li>
+               <li><a href="#servicios">SERVICIOS</a></li>
+               <li><a href="#contacto" >CONTACTO</a></li>
+               <li><a href="#merch">MERCH</a></li>
+             </ul>
+           </div>
+           <div class="footer-col">
+             <h4>Seguinos</h4>
+             <div class="social-links">
+               <a href="#"><i class="fa-brands fa-whatsapp" ></i></a>
+               <a href="#"><i class="fa-brands fa-facebook" ></i></a>
+               <a href="#"><i class="fa-brands fa-telegram"></i></a>
+             </div>
+           </div>
+         </div>
+        </div>
+     </footer>
+    
     <!--enlace de javascript de bootstrap-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
