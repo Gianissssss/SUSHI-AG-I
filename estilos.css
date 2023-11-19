@@ -12,26 +12,33 @@ html{
 }
 body{
     background-color: black;
+    width: 100%;
+    overflow-x: hidden;
  }
  nav{
    display: flex;
-   justify-content: space-around;
-   align-items: center; 
    position: fixed;
    right: 0;
    left: 0;
-   background-color: transparent !important;
    z-index: 1000;
+   padding: 10px 20px;
+   background-color: #000000a2;
 }
 
 nav .logo img{
     width: 60px;
     cursor: pointer;
-    margin: 7px 0;
+    margin: 0 2em;
 }
 
 nav ul{
     list-style: none;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 0 2em;
+    padding: 0;
+    height: 100%;
 }
 
 nav ul li{
@@ -64,15 +71,34 @@ nav ul li a:hover{
     color: orangered;
 }
 
+nav .icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 2em;
+}
+
 nav .icons i{
-    font-size: 18px;
-    color: black;
-    margin:0 5px;
+    font-size: 16px;
+    color: rgb(255, 211, 99);
+    margin:0 2px;
     cursor: pointer;
     transition: 0.3s;
 }
 nav .icons i:hover{
    color: orangered;
+}
+.navbar-toggler{
+  justify-content: center;
+  margin-right: 2em;
+  border: none !important;
+  outline: none !important;
+
+}
+.navbar-toggler-icon{
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ff7b0072 !important;
 }
 /*inicio*/
   .banner{
