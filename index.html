@@ -28,22 +28,20 @@
                 <li class="nav-item"><a class="nav-link" href="#menu">MENÚ</a></li>
                 <li class="nav-item"><a class="nav-link" href="#servicios">SERVICIOS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacto">CONTACTO</a></li>
-                <li class="nav-item"><a class="nav-link" href="#merch">MERCH</a></li>
             </ul>
         </div>
         <div class="icons">
-            <i class="fa-solid fa-heart"></i>
             <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-item-count" id="cartItemCount">0</span>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
     </nav>
 
      <!-- inicio -->
     
-    <div class="banner">
+    <div class="banner" id="inicio">
         <div class="banner-description">
             <div data-aos="fade-up" data-aos-duration="2000" class="line" ></div>
             <h2 data-aos="fade-up" data-aos-duration="2000">En Sushi Agüi nos caracterizamos por mantener la tradición del sushi, ofreciendo productos de primera calidad y elaborando piezas que le dan sabor a tu paladar </h2>
@@ -51,7 +49,7 @@
     </div>
 
     <!--section 1-->
-    <div class="seccion" id="servicios">
+    <div class="seccion">
      <section class="events">
         <div class="row">
             <div class="col">
@@ -80,108 +78,176 @@
     <div class="menu" id="menu">
         <h1 data-aos="fade-down" data-aos-duration="2000">Nuestro Menú</h1>
         <div class="menu-box" data-aos="zoom-in" data-aos-duration="2000">
+
             <!--primer producto-->
            <div class="menu-card">
             <div class="menu-img">
-                <img src="imagenes/pieza-sushi.jpg" alt="">
+                <img src="imagenes/PHILADELPHIA.jpg" alt="">
             </div>
             <div class="menu-info">
-                <h2>Nombre</h2>
-                <p>info del producto</p>
+                <h2>Filadelfia</h2>
+                <p>Salmón, palta y queso crema (8u)</p>
                 <h3>$1000</h3>
-                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <div class="cart-container">
+                    <div class="counter-container">
+                        <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
+                        <span class="counter" id="contadorProducto">0</span>
+                        <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
+                        <a  class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
             </div>
            </div> 
+
            <!--segundo producto-->
            <div class="menu-card">
             <div class="menu-img">
-                <img src="imagenes/pieza-sushi.jpg" alt="">
+                <img src="imagenes/new-york-rolls.jpg" alt="">
             </div>
             <div class="menu-info">
-                <h2>Nombre</h2>
-                <p>info del producto</p>
+                <h2>New york</h2>
+                <p>Salmón y palta cubierto por sésamo (8u)</p>
                 <h3>$1000</h3>
-                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <div class="cart-container">
+                    <div class="counter-container">
+                        <button class="counter-btn">-</button>
+                        <span class="counter">0</span>
+                        <button class="counter-btn">+</button>
+                        <a  class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
             </div>
            </div> 
+
            <!--tercer producto-->
            <div class="menu-card">
             <div class="menu-img">
-                <img src="imagenes/pieza-sushi.jpg" alt="">
+                <img src="imagenes/california2.jpeg" alt="">
             </div>
             <div class="menu-info">
-                <h2>Nombre</h2>
-                <p>info del producto</p>
+                <h2>California</h2>
+                <p> pepino, kanikama y aguacate (8u)</p>
                 <h3>$1000</h3>
-                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <div class="cart-container">
+                    <div class="counter-container">
+                        <button class="counter-btn">-</button>
+                        <span class="counter">0</span>
+                        <button class="counter-btn">+</button>
+                        <a  class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
             </div>
            </div> 
+
            <!--cuarto producto-->
            <div class="menu-card">
             <div class="menu-img">
-                <img src="imagenes/pieza-sushi.jpg" alt="">
+                <img src="imagenes/gaeshes.jpeg" alt="">
             </div>
             <div class="menu-info">
-                <h2>Nombre</h2>
-                <p>info del producto</p>
+                <h2>Geishas</h2>
+                <p>queso crema y palta en salmón (8u)</p>
                 <h3>$1000</h3>
-                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <div class="cart-container">
+                    <div class="counter-container">
+                        <button class="counter-btn">-</button>
+                        <span class="counter">0</span>
+                        <button class="counter-btn">+</button>
+                        <a  class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
             </div>
            </div> 
+
            <!--quinto producto-->
            <div class="menu-card">
             <div class="menu-img">
-                <img src="imagenes/pieza-sushi.jpg" alt="">
+                <img src="imagenes/nigiri.jpeg" alt="">
             </div>
             <div class="menu-info">
-                <h2>Nombre</h2>
-                <p>info del producto</p>
+                <h2>Nigiris</h2>
+                <p>arroz con lamina de salmón (8u)</p>
                 <h3>$1000</h3>
-                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <div class="cart-container">
+                    <div class="counter-container">
+                        <button class="counter-btn">-</button>
+                        <span class="counter">0</span>
+                        <button class="counter-btn">+</button>
+                        <a  class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
             </div>
            </div> 
+
            <!--sexto producto-->
            <div class="menu-card">
             <div class="menu-img">
-                <img src="imagenes/pieza-sushi.jpg" alt="">
+                <img src="imagenes/tam.jpeg" alt="">
             </div>
             <div class="menu-info">
-                <h2>Nombre</h2>
-                <p>info del producto</p>
+                <h2>Tamagos</h2>
+                <p>Salmón y queso crema en tamago (8u)</p>
                 <h3>$1000</h3>
-                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <div class="cart-container">
+                    <div class="counter-container">
+                        <button class="counter-btn">-</button>
+                        <span class="counter">0</span>
+                        <button class="counter-btn">+</button>
+                        <a  class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
             </div>
            </div> 
+
            <!--septimo producto-->
            <div class="menu-card">
             <div class="menu-img">
-                <img src="imagenes/pieza-sushi.jpg" alt="">
+                <img src="imagenes/rabas2.jpeg" alt="">
             </div>
             <div class="menu-info">
-                <h2>Nombre</h2>
-                <p>info del producto</p>
+                <h2>Rabas</h2>
+                <p>Porcion de rabas (15u)</p>
                 <h3>$1000</h3>
-                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <div class="cart-container">
+                    <div class="counter-container">
+                        <button class="counter-btn">-</button>
+                        <span class="counter">0</span>
+                        <button class="counter-btn">+</button>
+                        <a  class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
             </div>
            </div> 
+
            <!--octavo producto-->
            <div class="menu-card">
             <div class="menu-img">
-                <img src="imagenes/pieza-sushi.jpg" alt="">
+                <img src="imagenes/langostin.jpeg" alt="">
             </div>
             <div class="menu-info">
-                <h2>Nombre</h2>
-                <p>info del producto</p>
+                <h2>Langostinos</h2>
+                <p>Porcion de langostinos fritos (12u)</p>
                 <h3>$1000</h3>
-                <a href="#" class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                <div class="cart-container">
+                    <div class="counter-container">
+                        <button class="counter-btn">-</button>
+                        <span class="counter">0</span>
+                        <button class="counter-btn">+</button>
+                        <a  class="menu-btn-carro"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
             </div>
            </div>   
         </div>  
     </div>
 
+    <div class="servicios" id="servicios">
+
+    </div>
+
 
     <!--footer-->
-    <footer class="footer">
+    <footer class="footer" id="contacto">
         <div class="container-f">
          <div class="row-f">
             <div class="footer-col">
@@ -200,7 +266,6 @@
                <li><a href="#menu">MENÚ</a></li>
                <li><a href="#servicios">SERVICIOS</a></li>
                <li><a href="#contacto" >CONTACTO</a></li>
-               <li><a href="#merch">MERCH</a></li>
              </ul>
            </div>
            <div class="footer-col">
@@ -224,6 +289,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
+    <script src="main.js"></script>
 </body>
 </html>

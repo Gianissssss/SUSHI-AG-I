@@ -210,29 +210,33 @@ nav .icons i:hover{
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
-    font-family: 'TR Tempus Sans ITC', sans-serif;
+    font-family: 'Didact Gothic', sans-serif;
+    white-space: nowrap;
 }
 
 .menu .menu-box{
-    width: 95%;
+    width: 75%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap:15px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap:5em;
 }
 
 .menu .menu-box .menu-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: aliceblue;
-    width: 200px;
-    height: 300px;
-    padding-top: 10px;
+    width: 100%;
+    height: 100%;
     margin-bottom: 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px black;
+    overflow: hidden;
 }
 .menu .menu-box .menu-card .menu-img{
-    width: 190px;
-    height: 100px;
+    width: 100%;
+    height: 200px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
@@ -248,13 +252,18 @@ nav .icons i:hover{
     transform: scale(1.1);
 }
 
-
+.menu .menu-box .menu-card .menu-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 .menu .menu-box .menu-card .menu-info h2{
-    width: 60%;
     text-align: center;
-    margin: 10px auto 10px auto;
+    margin: 1em;
     font-size: 25px;
     color: #fa7f01;
+    white-space: nowrap;
 }
 
 .menu .menu-box .menu-card .menu-info p{
@@ -268,24 +277,13 @@ nav .icons i:hover{
     margin-top: 10px;
 }
 
-.menu .menu-box .menu-card .menu-info .menu-icon{
-    color: orangered;
-    text-align: center;
-    margin: 10px 0 10px 0;
-}
- .menu .menu-box .menu-card .menu-info .menu-btn-heart{
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    background: rgb(255, 0, 0);
-    border-radius: 20px;
-    padding: 8px 10px;
-    margin-left: 10px;
-    transition: 0.3s;
-} 
+/*seccion carrito*/
+.menu .menu-box .menu-card .menu-info .cart-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px; 
 
+}
 .menu .menu-box .menu-card .menu-info .menu-btn-carro{
     display: inline-block;
     align-items: center;
@@ -293,24 +291,38 @@ nav .icons i:hover{
     text-decoration: none;
     color: white;
     background: rgb(43, 255, 0);
-    border-radius: 20px;
-    padding: 8px 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
     margin-left: 10px;
     margin-right: 10px;
     transition: 0.3s;
 } 
+.menu .menu-box .menu-card .menu-info .menu-btn-carro:hover{
+  transform: scale(1.1);
+  color: #000000;
+  cursor: pointer;
+}
+.menu .menu-box .menu-card .menu-info .counter-btn {
+  background-color:#fa7f01;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: 0.1s;
+}
+.menu .menu-box .menu-card .menu-info .counter-btn:active,
+.menu .menu-box .menu-card .menu-info .menu-btn-carro:active{
+  background-color: #000000;
+  color: #ddd;
+}
+.menu .menu-box .menu-card .menu-info .counter {
+  font-size: 16px;
+  margin: 0 5px;
+}
 
-.menu .menu-box .menu-card .menu-info .menu-btn{
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    background: rgb(255, 136, 0);
-    border-radius: 20px;
-    padding: 8px 10px;
-    transition: 0.3s;
-} 
+
 .container {
     display: flex;
     justify-content: center;
@@ -463,4 +475,23 @@ form button:hover {
     .footer-col{
       width: 100%;
   }
+  }
+
+
+  @media screen and (min-width: 1200px) {
+    .menu .menu-box {
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas en pantallas extra grandes */
+    }
+  }
+
+  @media screen and (max-width: 1199px) and (min-width: 768px) {
+    .menu .menu-box {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .menu .menu-box {
+        grid-template-columns: repeat(1, 1fr); /* 1 columna en pantallas pequeñas */
+    }
   }
