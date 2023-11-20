@@ -38,3 +38,7 @@ function agregarAlCarrito(btn) {
     cartItemCount.textContent = parseInt(cartItemCount.textContent, 10) + cantidad;
     contadorProducto.textContent = '0';
 }
+//btn-suscribe
+document.getElementById("btn-sub").addEventListener('click', function() {
+    alert('Te suscribiste');
+   });
