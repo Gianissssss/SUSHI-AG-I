@@ -22,8 +22,9 @@ body{
    left: 0;
    z-index: 1000;
    padding: 10px 20px;
-   background-color: #000000a2;
+   background-color: #eed7d7;
 }
+
 
 nav .logo img{
     width: 60px;
@@ -48,7 +49,7 @@ nav ul li{
 
 nav ul li a{
     text-decoration: none;
-    color: #fff;
+    color: #000000 !important;
     font-weight: 500;
     font-size: 17px;
     transition: 0.1s;
@@ -58,7 +59,7 @@ nav ul li a::after{
     content: '';
     width: 0;
     height: 2px;
-    background: orangered;
+    background: #fa7f01;
     display: block;
     transition: 0.2s linear;
 }
@@ -68,7 +69,7 @@ nav ul li a:hover::after{
 }
 
 nav ul li a:hover{
-    color: orangered;
+    color: #fa7f01;
 }
 
 nav .icons {
@@ -80,18 +81,18 @@ nav .icons {
 
 nav .icons i{
     font-size: 16px;
-    color: rgb(255, 211, 99);
+    color: rgb(0, 0, 0);
     margin:0 2px;
     cursor: pointer;
     transition: 0.3s;
 }
 nav .icons i:hover{
-   color: orangered;
+   color: #fa7f01;
 }
 .navbar-toggler{
   justify-content: center;
   margin-right: 2em;
-  border: none !important;
+  border-style: none !important;
   outline: none !important;
 
 }
@@ -120,44 +121,41 @@ nav .icons i:hover{
     margin: auto;
     text-align: center;
   }
-  .line {
-    width: 150px;
-    height: 4px;
-    background-color: black;
-    margin: 10px auto;
-    border-radius: 5px;
-  }
+  
+  
   .banner-description h2{
-    font-family:  'TR Tempus Sans ITC', sans-serif;
+    font-family: 'Didact Gothic', sans-serif;
     color: #fff;
-    font-weight: bold;
+    font-weight:500;
+    font-size: xx-large;
   }
   /*seccion de servicios*/
-  section{
-    width: 90%;
-    margin-top: 80px ;
-    margin-left: 80px ;
-    margin-right: 80px ;
-    padding-bottom: 30px;
+  .seccion{
+    padding-bottom: 2em;
+  
+  }
+  section.events { 
+    background: white;
   }
   
-  .seccion{
-    background: white;
-    
+  .col {
+    text-align: center; 
+    flex: 1; 
   }
+  
   .title h1{
     text-align: center;
     font-size: 5vmin;
     color: black;
     font-weight: bold;
-    font-family: 'TR Tempus Sans ITC', sans-serif;
+    font-family:'Didact Gothic', sans-serif;
   }
 
   .row{
     display:flex;
     align-items: center;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .row .col {
     display: flex;
@@ -184,27 +182,20 @@ nav .icons i:hover{
   .col h4{
     font-weight: bold;
     font-size: 20px;
-    color: rgb(255, 115, 0);
-    font-family:  'TR Tempus Sans ITC', sans-serif;
+    color: #fa7f01;
+    font-family:  'Didact Gothic', sans-serif;
     margin: 10px auto;
   }
   .col p{
-    font-family:   'TR Tempus Sans ITC', sans-serif;
+    font-family:  'Didact Gothic', sans-serif;
     font-size: 15px;
     text-align: center;
     margin: 3px;
     color: black;
     font-weight: bold;
   }
-  /*linea curveada del header*/
-  .curveado{
-    position: absolute;
-    width: 100%;
-    bottom: -10px;
-  }
-  .curveado img{
-    width: 100%;
-  }
+  
+  
 /*menu*/
 .menu{
     background-image: url(imagenes/fondo\ naranja.png);
@@ -263,7 +254,7 @@ nav .icons i:hover{
     text-align: center;
     margin: 10px auto 10px auto;
     font-size: 25px;
-    color: orangered;
+    color: #fa7f01;
 }
 
 .menu .menu-box .menu-card .menu-info p{
