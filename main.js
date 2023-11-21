@@ -107,11 +107,12 @@ document.getElementById("btn-sub").addEventListener('click', function(event) {
 
 
 
-const btncarro =  document.querySelectorAll('.menu-btn-carro');
+
+
+const btncarro = document.querySelectorAll('.menu-btn-carro');
 btncarro.forEach(btnAdd => {
     btnAdd.addEventListener('click', addToCartClicked);
 });
-
 
 function addToCartClicked(event) {
     const boton = event.target;
@@ -124,5 +125,26 @@ function addToCartClicked(event) {
     
 }
 
+function addItemCart(itemTitle, itemPrice, itemImg) {
+    const cartItemList = document.getElementById('cartItemList');
 
+    // Verificar si el producto ya está en el carrito
+    const existingItem = cartItemList.querySelector(`[data-title="${itemTitle}"]`);
+    if (existingItem) {
+        const quantityElement = existingItem.querySelector('.cart-item-quantity');
+        const quantity = parseInt(quantityElement.textContent) + 1;
+        quantityElement.textContent = quantity;
+    } else {
+        const li = document.createElement('li');
+        li.dataset.title = itemTitle;
 
+        li.innerHTML = `
+            <img src="${itemImg}" alt="" class="cart-item-img" style="width: 50px; height: 50px;">
+            <span class="cart-item-title">${itemTitle}</span>
+            <span class="cart-item-price">${itemPrice}</span>
+            <span class="cart-item-quantity">1</span>
+        `;
+
+        cartItemList.appendChild(li);
+    }
+}
