@@ -42,3 +42,7 @@ function agregarAlCarrito(btn) {
 document.getElementById("btn-sub").addEventListener('click', function() {
     alert('Te suscribiste');
    });
+
+function clearInput() {
+    document.getElementById("myInput").value = "";
+}
