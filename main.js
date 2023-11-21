@@ -23,7 +23,19 @@ function actualizarNumero(btn, cambio) {
 
 
 
-function agregarAlCarrito(btn) {
+function getProductsFromStorage() {
+    var products = localStorage.getItem('products');
+    return products ? JSON.parse(products) : [];
+}
+function agregarAlCarrito(btn,productId, productName, productImage, productPrice) {
+    var count = 1;
+    var products = getProductsFromStorage();
+    var existingProductIndex = products.findIndex(p => p.id === productId);
+    if (existingProductIndex !== -1) {
+        count = products[existingProductIndex].count + 1;
+    }
+    products.push({ id: productId, nombre: productName, img: productImage, precio: productPrice, cont: count });
+    localStorage.setItem('products', JSON.stringify(products));
     //elemento padre de la información del producto
     var menuCard = btn.closest('.menu-card');
 
@@ -67,10 +79,6 @@ function mostrarNotificacion(mensaje) {
         notification.remove();
     }, 2000); // 
 }
-
-
-
-
 
 
 
