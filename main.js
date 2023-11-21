@@ -39,10 +39,24 @@ function agregarAlCarrito(btn) {
     contadorProducto.textContent = '0';
 }
 //btn-suscribe
-document.getElementById("btn-sub").addEventListener('click', function() {
-    alert('Te suscribiste');
-   });
 
 function clearInput() {
     document.getElementById("myInput").value = "";
 }
+
+document.getElementById("btn-sub").addEventListener('click', function(event) {
+    event.preventDefault();
+    var emailInput = document.getElementById("myInput");
+    var emailValue = emailInput.value;
+    // Expresión regular para validar el formato de correo electrónico
+    var emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+
+    if (emailValue.trim() === "") {
+        alert('Por favor, ingresa tu dirección de correo electrónico.');
+    } else if (!emailRegex.test(emailValue)) {
+        alert('Por favor, ingresa una dirección de correo electrónico válida.');
+    } else {
+        alert('suscrito con exito');
+    }
+});
+

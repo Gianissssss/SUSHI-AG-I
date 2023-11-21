@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilos menu.css">
+    <link rel="stylesheet" href="servicios.css">
     <link rel="icon" type="image/x-icon"  href="imagenes/ilustracion.png">
     <!--enlace css de bootstrap-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -102,7 +104,7 @@
            <!--segundo producto-->
            <div class="menu-card">
             <div class="menu-img">
-                <img src="imagenes/ebifurai.jpg" alt="">
+                <img src="imagenes/new-york-rolls.jpg" alt="">
             </div>
             <div class="menu-info">
                 <h2>Ebi furai</h2>
@@ -274,15 +276,16 @@
         <p>Por eso, su sabor y textura son tan especiales. Deja a tus invitados boquiabiertos con esta gran experiencia.</p>
     </div> 
 </div>
+
 <div class="div-sus">
 <div class="suscription">
     <p>Suscribete para recibir notificaciones nuevas</p>
-    <div class="form">
-        <input id="myInput" class="input" placeholder="Correo" required="" type="text">
+    <form class="form" id="myForm">
+        <input id="myInput" class="input" placeholder="Correo"  type="text" required >
         <span class="input-border"></span>
-      </div>
-    <button class="btn-sub" id="btn-sub" onclick="clearInput()">Suscribirse</button>
-</div>
+        <button type="submit"  class="btn-sub" id="btn-sub" >Suscribirse</button>
+    </form>
+    </div>
 </div>
 
 
