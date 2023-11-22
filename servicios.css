@@ -174,6 +174,8 @@
     --border-before-color: rgba(221, 221, 221, 0.39);
     position: relative;
     width: var(--width-of-input);
+    height: 120px;
+    margin: auto;
    }
    /* styling of Input */
    .input {
@@ -214,5 +216,21 @@
    @media screen and (max-width: 545px) {
     .banner-servicios .div-servicios h2 {
       font-size: 32px;
+    }
+    .servicios1 .img-servicios img, .servicios2 .img-servicios img{
+      margin: auto;
+    }
+  }
+  
+  
+  @media screen and (max-width: 1199px) and (min-width: 768px) {
+    .menu .menu-box {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .menu .menu-box {
+        grid-template-columns: repeat(1, 1fr); /* 1 columna en pantallas pequeñas */
     }
   }
