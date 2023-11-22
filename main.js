@@ -148,3 +148,48 @@ function addItemCart(itemTitle, itemPrice, itemImg) {
         cartItemList.appendChild(li);
     }
 }
+
+//formulario compra
+document.getElementById('paymentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var paymentMethod = document.getElementById('paymentMethod').value;
+    
+    if (paymentMethod === 'card') {
+        var cardHolderName = document.getElementById('cardHolderName').value;
+        var cardNumber = document.getElementById('cardNumber').value;
+        
+        if (!cardHolderName || !cardNumber) {
+            alert('Por favor, complete la información de la tarjeta.');
+            return;
+        }
+    }
+    
+    document.getElementById('paymentForm').reset();
+    document.getElementById('successBanner').style.display = 'block';
+    
+    setTimeout(function() {
+        document.getElementById('successBanner').style.display = 'none';
+    }, 3000);
+});
+
+document.getElementById('paymentMethod').addEventListener('change', function() {
+    var paymentMethod = this.value;
+    
+    if (paymentMethod === 'card') {
+        document.getElementById('cardInfo').style.display = 'block';
+    } else {
+        document.getElementById('cardInfo').style.display = 'none';
+    }
+});
+
+document.getElementById("btn-enviar").addEventListener('click',function(){
+    alert("La compra fue exitosa")
+    
+})
+
+function cerrarFormulario() {
+    var formulario = document.getElementById("paymentForm");
+    formulario.style.display = "none";
+    window.location.href = "index.html";
+}

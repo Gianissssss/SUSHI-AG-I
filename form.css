@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap');
+@import url('https://fonts.cdnfonts.com/css/tr-tempus-sans-itc');
+.modal-carrito{
+    margin-top: 50px;
+}
+.modal-carrito .form {
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    background-color: #ff8800;
+    color: black;
+    padding: 20px;
+    border-radius: 20px;
+    font-family:  'Didact Gothic', sans-serif;
+}
+
+.modal-carrito .form h2{
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #000000;
+    text-align: center;
+}
+
+.modal-carrito .form .labelCarrito{
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #000000;
+}
+
+.modal-carrito .form .inputCarrito{
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    outline: none;
+    border: 1px solid #e5e5e500;
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+.modal-carrito .form .inputCarrito:focus {
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 0px 2px #242424;
+    background-color: white;
+}
+.modal-carrito .form #btn-enviar{
+    text-align: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    background-color:rgb(43, 255, 0) ;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 20px;
+    margin: 5px;
+    font-weight: bold;
+}
+.modal-carrito .labelCarrito, .inputCarrito, .selectCarrito, #btn-enviar {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.modal-carrito .form #cerrarBtn{
+    text-align: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    background-color: #ff0000;
+    color: aliceblue;
+    border: none;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.modal-carrito .form .footerForm{
+    display: flex;
+    align-items: center;
+    margin-top: 10px; 
+    padding-left: 70px;
+}

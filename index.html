@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,24 @@
     <link rel="stylesheet" href="estilos menu.css">
     <link rel="stylesheet" href="servicios.css">
     <link rel="stylesheet" href="estilos cart.css">
-    <link rel="icon" type="image/x-icon"  href="imagenes/ilustracion.png">
+    <link rel="stylesheet" href="form.css">
+    <link rel="icon" type="image/x-icon" href="imagenes/ilustracion.png">
     <!--enlace css de bootstrap-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
     <title>SUSHI AGÜI</title>
 </head>
+
 <body>
     <!--navegador-->
- 
+
     <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
         <div class="logo">
             <img src="imagenes/logo sin fondo.png" alt="">
@@ -35,64 +41,102 @@
         <div class="icons">
             <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <a><i class="fa-solid fa-cart-shopping"></i></a>
-              </button>
+            </button>
             <span class="cart-item-count" id="cartItemCount">0</span>
         </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito de compras</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito de compras</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="cartItemList"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button data-bs-toggle="modal" data-bs-target="#myModal" type="button"
+                        class="btn btn-primary">Pagar</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-            <ul id="cartItemList"></ul>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
     </div>
-  </div>
-    
-     <!-- inicio -->
-    
+    <!--modal carrito-->
+    <div class="modal modal-carrito" id="myModal">
+        <div class="modal-body">
+            <form id="paymentForm" class="form">
+                <h2>Formulario de pago</h2>
+                <label class="labelCarrito" for="name">Nombre</label>
+                <input class="inputCarrito" type="text" id="name" name="name" required>
+                
+                <label class="labelCarrito" for="lastName">Apellido</label>
+                <input class="inputCarrito" type="text" id="lastName" name="lastName" required>
+                
+                <label class="labelCarrito" for="phone">Teléfono</label>
+                <input class="inputCarrito" type="tel" id="phone" name="phone" required>
+                
+                <label  class="labelCarrito" for="paymentMethod">Método de pago</label>
+                <select class="selectCarrito" id="paymentMethod" name="paymentMethod" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="cash">Efectivo</option>
+                    <option value="card">Tarjeta</option>
+                </select>
+                
+                <div id="cardInfo" style="display: none;">
+                    <label class="labelCarrito" for="cardHolderName">Nombre del titular</label>
+                    <input class="inputCarrito" type="text" id="cardHolderName" name="cardHolderName">
+                    
+                    <label class="labelCarrito" for="cardNumber">Número de tarjeta</label>
+                    <input class="inputCarrito" type="text" id="cardNumber" name="cardNumber">
+                </div>
+                <div class="footerForm">
+                    <button id="cerrarBtn" type="button" data-bs-dismiss="myModal" onclick="cerrarFormulario()">Cerrar</button>
+                    <button id="btn-enviar" type="submit" onclick="cerrarFormulario()">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- inicio -->
+
     <div class="banner" id="inicio">
         <div class="banner-description">
-            <div data-aos="fade-up" data-aos-duration="2000" class="line" ></div>
-            <h2 data-aos="fade-up" data-aos-duration="2000">En Sushi Agüi nos caracterizamos por mantener la tradición del sushi, ofreciendo productos de primera calidad y elaborando piezas que le dan sabor a tu paladar </h2>
+            <div data-aos="fade-up" data-aos-duration="2000" class="line"></div>
+            <h2 data-aos="fade-up" data-aos-duration="2000">En Sushi Agüi nos caracterizamos por mantener la tradición
+                del sushi, ofreciendo productos de primera calidad y elaborando piezas que le dan sabor a tu paladar
+            </h2>
         </div>
     </div>
 
     <!--section 1-->
     <div class="seccion">
-     <section class="events">
-        <div class="row">
-            <div class="col">
-                <img src="imagenes/icon-calidad.gif" width="60"  alt="">
-                <h4 data-aos="flip-left" data-aos-duration="2000">Calidad</h4>
+        <section class="events">
+            <div class="row">
+                <div class="col">
+                    <img src="imagenes/icon-calidad.gif" width="60" alt="">
+                    <h4 data-aos="flip-left" data-aos-duration="2000">Calidad</h4>
+                </div>
+                <div class="col">
+                    <img src="imagenes/icon-tiempo.gif" width="60" alt="">
+                    <h4 data-aos="flip-left" data-aos-duration="2000">Rapidez</h4>
+                </div>
+                <div class="col">
+                    <img src="imagenes/icon-user.gif" width="60" alt="">
+                    <h4 data-aos="flip-left" data-aos-duration="2000">Personal calificado</h4>
+                </div>
+                <div class="col">
+                    <img src="imagenes/icon-fecha.gif" width="60" alt="">
+                    <h4 data-aos="flip-left" data-aos-duration="2000">Horario extendido</h4>
+                </div>
             </div>
-            <div class="col">
-                <img src="imagenes/icon-tiempo.gif" width="60" alt="">
-                <h4  data-aos="flip-left" data-aos-duration="2000">Rapidez</h4>
-            </div>
-            <div class="col">
-                <img src="imagenes/icon-user.gif" width="60" alt="">
-                <h4  data-aos="flip-left" data-aos-duration="2000">Personal calificado</h4>
-            </div>
-            <div class="col">
-                <img src="imagenes/icon-fecha.gif" width="60" alt="">
-                <h4  data-aos="flip-left" data-aos-duration="2000">Horario extendido</h4>
-            </div>
-        </div>
-     </section>
+        </section>
     </div>
 
 
@@ -103,165 +147,173 @@
         <div class="menu-box" data-aos="zoom-in" data-aos-duration="2000">
 
             <!--primer producto-->
-           <div class="menu-card">
-            <div class="menu-img">
-                <img class="item-img" src="imagenes/PHILADELPHIA.jpg" id="productImage" alt="">
-            </div>
-            <div class="menu-info">
-                <h2 id="productName" class="item-title">New york</h2>
-                <p>Salmón, palta y queso crema (8u)</p>
-                <h3 id="productPrice" class="item-price">$1000</h3>
-                <div class="cart-container">
-                    <div class="counter-container">
-                        <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
-                        <span class="counter" id="contadorProducto">0</span>
-                        <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
-                        <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i class="fa-solid fa-cart-shopping"></i></a>
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img class="item-img" src="imagenes/PHILADELPHIA.jpg" id="productImage" alt="">
+                </div>
+                <div class="menu-info">
+                    <h2 id="productName" class="item-title">New york</h2>
+                    <p>Salmón, palta y queso crema (8u)</p>
+                    <h3 id="productPrice" class="item-price">$1000</h3>
+                    <div class="cart-container">
+                        <div class="counter-container">
+                            <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
+                            <span class="counter" id="contadorProducto">0</span>
+                            <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
+                            <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i
+                                    class="fa-solid fa-cart-shopping"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-           </div> 
 
-           <!--segundo producto-->
-           <div class="menu-card">
-            <div class="menu-img">
-                <img class="item-img" src="imagenes/new-york-rolls.jpg" id="productImage" alt="">
-            </div>
-            <div class="menu-info">
-                <h2 id="productName" class="item-title">Ebi furai</h2>
-                <p>Langostino, palta y queso crema (8u)</p>
-                <h3 id="productPrice" class="item-price">$1000</h3>
-                <div class="cart-container">
-                    <div class="counter-container">
-                        <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
-                        <span class="counter" id="contadorProducto">0</span>
-                        <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
-                        <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i class="fa-solid fa-cart-shopping"></i></a>
+            <!--segundo producto-->
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img class="item-img" src="imagenes/new-york-rolls.jpg" id="productImage" alt="">
+                </div>
+                <div class="menu-info">
+                    <h2 id="productName" class="item-title">Ebi furai</h2>
+                    <p>Langostino, palta y queso crema (8u)</p>
+                    <h3 id="productPrice" class="item-price">$1000</h3>
+                    <div class="cart-container">
+                        <div class="counter-container">
+                            <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
+                            <span class="counter" id="contadorProducto">0</span>
+                            <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
+                            <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i
+                                    class="fa-solid fa-cart-shopping"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-           </div> 
 
-           <!--tercer producto-->
-           <div class="menu-card">
-            <div class="menu-img">
-                <img class="item-img" src="imagenes/california2.jpeg" id="productImage" alt="">
-            </div>
-            <div class="menu-info">
-                <h2 id="productName" class="item-title">California</h2>
-                <p> Kanikama, pepino y palta (8u)</p>
-                <h3 id="productPrice" class="item-price">$1000</h3>
-                <div class="cart-container">
-                    <div class="counter-container">
-                        <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
-                        <span class="counter" id="contadorProducto">0</span>
-                        <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
-                        <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i class="fa-solid fa-cart-shopping"></i></a>
+            <!--tercer producto-->
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img class="item-img" src="imagenes/california2.jpeg" id="productImage" alt="">
+                </div>
+                <div class="menu-info">
+                    <h2 id="productName" class="item-title">California</h2>
+                    <p> Kanikama, pepino y palta (8u)</p>
+                    <h3 id="productPrice" class="item-price">$1000</h3>
+                    <div class="cart-container">
+                        <div class="counter-container">
+                            <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
+                            <span class="counter" id="contadorProducto">0</span>
+                            <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
+                            <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i
+                                    class="fa-solid fa-cart-shopping"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-           </div> 
 
-           <!--cuarto producto-->
-           <div class="menu-card">
-            <div class="menu-img">
-                <img class="item-img" src="imagenes/gaeshes.jpeg" id="productImage" alt="">
-            </div>
-            <div class="menu-info">
-                <h2 id="productName" class="item-title">Geishas</h2>
-                <p>Queso crema y palta envuelto en salmón (8u)</p>
-                <h3 id="productPrice" class="item-price">$1000</h3>
-                <div class="cart-container">
-                    <div class="counter-container">
-                        <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
-                        <span class="counter" id="contadorProducto">0</span>
-                        <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
-                        <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i class="fa-solid fa-cart-shopping"></i></a>
+            <!--cuarto producto-->
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img class="item-img" src="imagenes/gaeshes.jpeg" id="productImage" alt="">
+                </div>
+                <div class="menu-info">
+                    <h2 id="productName" class="item-title">Geishas</h2>
+                    <p>Queso crema y palta envuelto en salmón (8u)</p>
+                    <h3 id="productPrice" class="item-price">$1000</h3>
+                    <div class="cart-container">
+                        <div class="counter-container">
+                            <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
+                            <span class="counter" id="contadorProducto">0</span>
+                            <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
+                            <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i
+                                    class="fa-solid fa-cart-shopping"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-           </div> 
 
-           <!--quinto producto-->
-           <div class="menu-card">
-            <div class="menu-img">
-                <img class="item-img" src="imagenes/nigiri.jpeg" id="productImage" alt="">
-            </div>
-            <div class="menu-info">
-                <h2 id="productName" class="item-title">Nigiris</h2>
-                <p>Arroz con lamina de salmón (8u)</p>
-                <h3 id="productPrice" class="item-price">$1000</h3>
-                <div class="cart-container">
-                    <div class="counter-container">
-                        <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
-                        <span class="counter" id="contadorProducto">0</span>
-                        <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
-                        <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i class="fa-solid fa-cart-shopping"></i></a>
+            <!--quinto producto-->
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img class="item-img" src="imagenes/nigiri.jpeg" id="productImage" alt="">
+                </div>
+                <div class="menu-info">
+                    <h2 id="productName" class="item-title">Nigiris</h2>
+                    <p>Arroz con lamina de salmón (8u)</p>
+                    <h3 id="productPrice" class="item-price">$1000</h3>
+                    <div class="cart-container">
+                        <div class="counter-container">
+                            <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
+                            <span class="counter" id="contadorProducto">0</span>
+                            <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
+                            <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i
+                                    class="fa-solid fa-cart-shopping"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-           </div> 
 
-           <!--sexto producto-->
-           <div class="menu-card">
-            <div class="menu-img">
-                <img class="item-img" src="imagenes/tam.jpeg" id="productImage" alt="">
-            </div>
-            <div class="menu-info">
-                <h2 id="productName" class="item-title">Tamagos</h2>
-                <p>Salmón y queso crema envuelto en tamago (8u)</p>
-                <h3 id="productPrice" class="item-price">$1000</h3>
-                <div class="cart-container">
-                    <div class="counter-container">
-                        <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
-                        <span class="counter" id="contadorProducto">0</span>
-                        <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
-                        <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i class="fa-solid fa-cart-shopping"></i></a>
+            <!--sexto producto-->
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img class="item-img" src="imagenes/tam.jpeg" id="productImage" alt="">
+                </div>
+                <div class="menu-info">
+                    <h2 id="productName" class="item-title">Tamagos</h2>
+                    <p>Salmón y queso crema envuelto en tamago (8u)</p>
+                    <h3 id="productPrice" class="item-price">$1000</h3>
+                    <div class="cart-container">
+                        <div class="counter-container">
+                            <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
+                            <span class="counter" id="contadorProducto">0</span>
+                            <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
+                            <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i
+                                    class="fa-solid fa-cart-shopping"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-           </div> 
 
-           <!--septimo producto-->
-           <div class="menu-card">
-            <div class="menu-img">
-                <img class="item-img" src="imagenes/rabas2.jpeg" id="productImage" alt="">
-            </div>
-            <div class="menu-info">
-                <h2 id="productName" class="item-title">Rabas</h2>
-                <p>Porcion de rabas (15u)</p>
-                <h3 id="productPrice" class="item-price">$1000</h3>
-                <div class="cart-container">
-                    <div class="counter-container">
-                        <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
-                        <span class="counter" id="contadorProducto">0</span>
-                        <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
-                        <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i class="fa-solid fa-cart-shopping"></i></a>
+            <!--septimo producto-->
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img class="item-img" src="imagenes/rabas2.jpeg" id="productImage" alt="">
+                </div>
+                <div class="menu-info">
+                    <h2 id="productName" class="item-title">Rabas</h2>
+                    <p>Porcion de rabas (15u)</p>
+                    <h3 id="productPrice" class="item-price">$1000</h3>
+                    <div class="cart-container">
+                        <div class="counter-container">
+                            <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
+                            <span class="counter" id="contadorProducto">0</span>
+                            <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
+                            <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i
+                                    class="fa-solid fa-cart-shopping"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-           </div> 
 
-           <!--octavo producto-->
-           <div class="menu-card">
-            <div class="menu-img">
-                <img class="item-img" src="imagenes/langostin.jpeg" id="productImage" alt="">
-            </div>
-            <div class="menu-info">
-                <h2 id="productName" class="item-title">Langostinos</h2>
-                <p>Porcion de langostinos (12u)</p>
-                <h3 id="productPrice" class="item-price">$1000</h3>
-                <div class="cart-container">
-                    <div class="counter-container">
-                        <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
-                        <span class="counter" id="contadorProducto">0</span>
-                        <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
-                        <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i class="fa-solid fa-cart-shopping"></i></a>
+            <!--octavo producto-->
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img class="item-img" src="imagenes/langostin.jpeg" id="productImage" alt="">
+                </div>
+                <div class="menu-info">
+                    <h2 id="productName" class="item-title">Langostinos</h2>
+                    <p>Porcion de langostinos (12u)</p>
+                    <h3 id="productPrice" class="item-price">$1000</h3>
+                    <div class="cart-container">
+                        <div class="counter-container">
+                            <button class="counter-btn" onclick="actualizarNumero(this, -1)">-</button>
+                            <span class="counter" id="contadorProducto">0</span>
+                            <button class="counter-btn" onclick="actualizarNumero(this, 1)">+</button>
+                            <a id="addToCart" class="menu-btn-carro" onclick="agregarAlCarrito(this)"><i
+                                    class="fa-solid fa-cart-shopping"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-           </div>   
-        </div>  
+        </div>
     </div>
 
     <div class="servicios" id="servicios">
@@ -271,79 +323,87 @@
     <!--servicios-->
     <div class="banner-servicios">
         <div class="div-servicios">
-        <h2>Catering y Eventos</h2>
+            <h2>Catering y Eventos</h2>
         </div>
     </div>
-<div class="servicios1">
-    <div class="descrip-servicios">
-        <h3>Nuestro catering</h3>
-        <p>Ya estés organizando un elegante evento corporativo o una reunión informal con tus amigos, el catering de SuShi Agüi es una elección deliciosa para cualquier ocasión especial.</p>
+    <div class="servicios1">
+        <div class="descrip-servicios">
+            <h3>Nuestro catering</h3>
+            <p>Ya estés organizando un elegante evento corporativo o una reunión informal con tus amigos, el catering de
+                SuShi Agüi es una elección deliciosa para cualquier ocasión especial.</p>
             <br>
-        <p>Trabajamos preparando toda clase de platos listos para consumir en eventos, reuniones, banquetes y fiestas, con el sushi como principal reclamo.</p>
+            <p>Trabajamos preparando toda clase de platos listos para consumir en eventos, reuniones, banquetes y
+                fiestas, con el sushi como principal reclamo.</p>
+        </div>
+        <div class="img-servicios"  data-aos="fade-left" data-aos-duration="2000">
+            <img src="imagenes/catering1.jpg" alt="">
+        </div>
     </div>
-    <div class="img-servicios">
-        <img src="imagenes/catering1.jpg"  alt="">
-    </div>
-</div>
-<hr>
-<div class="servicios2">
-    <div class="img-servicios">
-        <img src="imagenes/catering2.webp"  alt="">
-    </div>
-    <div class="descrip-servicios">
-        <h3>Nuestros platos</h3>
-        <p>Nuestras piezas de Sushi, son muy demandadas por su tamaño, calidad de producto y frescura, además de ser un Sushi totalmente sano y saludable.</p>
+    <div class="servicios2">
+        <div class="img-servicios" data-aos="fade-right" data-aos-duration="2000">
+            <img src="imagenes/catering2.webp" alt="">
+        </div>
+        <div class="descrip-servicios">
+            <h3>Nuestros platos</h3>
+            <p>Nuestras piezas de Sushi, son muy demandadas por su tamaño, calidad de producto y frescura, además de ser
+                un Sushi totalmente sano y saludable.</p>
             <br>
-        <p>Por eso, su sabor y textura son tan especiales. Deja a tus invitados boquiabiertos con esta gran experiencia.</p>
-    </div> 
-</div>
-
-<div class="div-sus">
-<div class="suscription">
-    <p>Suscribete para recibir notificaciones nuevas</p>
-    <form class="form" id="myForm">
-        <input id="myInput" class="input" placeholder="Correo"  type="text" required >
-        <span class="input-border"></span>
-        <button type="submit"  class="btn-sub" id="btn-sub" >Suscribirse</button>
-    </form>
+            <p>Por eso, su sabor y textura son tan especiales. Deja a tus invitados boquiabiertos con esta gran
+                experiencia.</p>
+        </div>
+    </div>
+<div class="minibanner">
+    <div class="cont-minibanner">
+        <h3>Pedi ahora! 2995675345</h3>
+        <h4>Cipolletti - Rio Negro</h4>
     </div>
 </div>
+    <div class="div-sus">
+        <div class="suscription">
+            <p>Suscribete para recibir notificaciones nuevas</p>
+            <form class="form" id="myForm">
+                <input id="myInput" class="input" placeholder="Correo" type="text" required>
+                <span class="input-border"></span>
+                <button type="submit" class="btn-sub" id="btn-sub">Suscribirse</button>
+            </form>
+        </div>
+    </div>
 
 
     <!--footer-->
     <footer class="footer" id="contacto">
         <div class="container-f">
-         <div class="row-f">
-            <div class="footer-col">
-                <img src="imagenes/logo sin fondo.png" style="margin:5px;" width="140" height="90" alt="">
-              </div>
-           <div class="footer-col">
-             <h4>SUSHI AGÜI COMPANY</h4>
-             <ul class="ul-f">
-               <li><a href="#inicio">INICIO</a></li>
-               <li><a href="#menu">MENU</a></li>
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>Tienda online</h4>
-             <ul class="ul-f">
-               <li><a href="#menu">MENÚ</a></li>
-               <li><a href="#servicios">SERVICIOS</a></li>
-               <li><a href="#contacto" >CONTACTO</a></li>
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>Seguinos</h4>
-             <div class="social-links">
-               <a href="#"><i class="fa-brands fa-whatsapp" ></i></a>
-               <a href="#"><i class="fa-brands fa-facebook" ></i></a>
-               <a href="#"><i class="fa-brands fa-telegram"></i></a>
-             </div>
-           </div>
-         </div>
+            <div class="row-f">
+                <div class="footer-col">
+                    <img src="imagenes/logo sin fondo.png" style="margin:5px;" width="140" height="90" alt="">
+                </div>
+                <div class="footer-col">
+                    <h4>SUSHI AGÜI COMPANY</h4>
+                    <ul class="ul-f">
+                        <li><a href="#inicio">INICIO</a></li>
+                        <li><a href="#menu">MENU</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Tienda online</h4>
+                    <ul class="ul-f">
+                        <li><a href="#menu">MENÚ</a></li>
+                        <li><a href="#servicios">SERVICIOS</a></li>
+                        <li><a href="#contacto">CONTACTO</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Seguinos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-     </footer>
-    
+    </footer>
+
     <!--enlace de javascript de bootstrap-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -352,7 +412,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
