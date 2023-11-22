@@ -48,7 +48,7 @@
   .servicios1 .descrip-servicios, .servicios2 .descrip-servicios,
   .servicios1 .img-servicios, .servicios2 .img-servicios{
     width: 100%;
-    margin: 20px;
+    margin: 20px 10px;
     text-align: center;
     flex: 1;
     
@@ -78,7 +78,7 @@
   
   /*suscribirse*/
   .div-sus{
-    margin-top: 10px;
+    margin: 20px ;
     width: 100%;
     align-items: center;
     text-align: center;
@@ -90,24 +90,24 @@
   .div-sus .suscription{
     display: flex;
     margin: auto;
-    width: 40%;
-    background-color: #000000fd;
+    width: 250px;
+    background-color: #000000;
     border-radius: 20px;
     color: #ddd;
     flex-wrap: wrap;
     text-align: center;
     align-items: center;
     justify-content: center;
-    border: 1px solid #000000;
+    border: 1px solid #ff9102;
   }
   .div-sus .suscription p{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     font-family: 'Didact Gothic', sans-serif;
     margin-top: 10px;
   }
   .div-sus .suscription .btn-sub{
-    width: 100%;
+    width: 90%;
     display: inline-block;
     transition: all 0.2s ease-in;
     position: relative;
@@ -174,19 +174,19 @@
     --border-before-color: rgba(221, 221, 221, 0.39);
     position: relative;
     width: var(--width-of-input);
-    height: 120px;
+    height: 100px;
     margin: auto;
    }
    /* styling of Input */
    .input {
     color: #ffffff;
-    font-size: 15px;
+    font-size: 14px;
     background-color: transparent;
     width: 100%;
     box-sizing: border-box;
     padding-inline: 0.5em;
     padding-block: 0.7em;
-    border: 1px solid #000000;
+    border: 1px solid #ff9102;
     border-radius: 20px;
     display: inline-block;
    }
@@ -217,20 +217,33 @@
     .banner-servicios .div-servicios h2 {
       font-size: 32px;
     }
-    .servicios1 .img-servicios img, .servicios2 .img-servicios img{
-      margin: auto;
+    .servicios1 .img-servicios img,
+    .servicios2 .img-servicios img {
+        width: 100%; 
+        height: auto;
+        margin: auto;
+    }
+    .servicios1,
+    .servicios2 {
+        flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
     }
   }
-  
-  
-  @media screen and (max-width: 1199px) and (min-width: 768px) {
-    .menu .menu-box {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    @media screen and (max-width: 700px){
+      .minibanner{
+        display: block;
+      }
+      .cont-minibanner, .div-sus{
+        position:absolute;
+        margin: 20px 0;
+      }
+      .div-sus .suscription{
+        margin-top: 60px;
+        width: 350px;
+        height: 150px;
+        
+      }
+      .minibanner .cont-minibanner p {
+        font-size: 22px;
     }
-  }
-  
-  @media screen and (max-width: 767px) {
-    .menu .menu-box {
-        grid-template-columns: repeat(1, 1fr); /* 1 columna en pantallas pequeñas */
-    }
-  }
+    
+}
