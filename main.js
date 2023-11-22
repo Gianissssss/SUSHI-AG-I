@@ -1,93 +1,7 @@
-
-
-function mostrarFormulario() {
-    document.getElementById("formulario").style.display = "block";
-}
-
-function ocultarFormulario() {
-    document.getElementById("formulario").style.display = "none";
-}
-
-/* menu */
-
-function actualizarNumero(btn, cambio) {
-    // Encuentra el elemento del contador más cercano
-    var contador = btn.closest('.counter-container').querySelector('.counter');
-    var valorActual = parseInt(contador.textContent, 10);
-    
-    // Actualiza el contador con el cambio
-    var nuevoValor = valorActual + cambio;
-    nuevoValor = Math.max(0, nuevoValor); // Asegura que no sea negativo
-    contador.textContent = nuevoValor;
-}
-
-
-
-function getProductsFromStorage() {
-    var products = localStorage.getItem('products');
-    return products ? JSON.parse(products) : [];
-}
-function agregarAlCarrito(btn,productId, productName, productImage, productPrice) {
-    var count = 1;
-    var products = getProductsFromStorage();
-    var existingProductIndex = products.findIndex(p => p.id === productId);
-    if (existingProductIndex !== -1) {
-        count = products[existingProductIndex].count + 1;
-    }
-    products.push({ id: productId, nombre: productName, img: productImage, precio: productPrice, cont: count });
-    localStorage.setItem('products', JSON.stringify(products));
-    //elemento padre de la información del producto
-    var menuCard = btn.closest('.menu-card');
-
-    var contadorProducto = menuCard.querySelector('.counter');
-    var cantidad = parseInt(contadorProducto.textContent, 10);
-
-    // Actualizar el número en el carrito del navbar y reiniciar el contador
-    var cartItemCount = document.getElementById('cartItemCount');
-    cartItemCount.textContent = parseInt(cartItemCount.textContent, 10) + cantidad;
-    contadorProducto.textContent = '0';
-
-    // Estilos y notificación
-    cartItemCount.style.backgroundColor = 'red';
-    cartItemCount.style.padding = '6px 10px';
-
-    mostrarNotificacion('Producto agregado');
-
-    // Restablecer el estilo 
-    setTimeout(function () {
-        cartItemCount.style.backgroundColor = '#fa7f01';
-        cartItemCount.style.padding = '';
-    }, 1000);
-
-  
-    
-}
-
-
-
-
-function mostrarNotificacion(mensaje) {
-    var notification = document.createElement('div');
-    notification.classList.add('notification');
-    notification.textContent = mensaje;
-
-    // Agrega la notificación 
-    document.body.appendChild(notification);
-
-    // Elimina la notificación 
-    setTimeout(function () {
-        notification.remove();
-    }, 2000); // 
-}
-
-
-
 //subscripcion
-
 function clearInput() {
     document.getElementById("myInput").value = "";
 }
-
 document.getElementById("btn-sub").addEventListener('click', function(event) {
     event.preventDefault();
     var emailInput = document.getElementById("myInput");
@@ -106,7 +20,63 @@ document.getElementById("btn-sub").addEventListener('click', function(event) {
 
 
 
+/* menu */
+function actualizarNumero(btn, cambio) {
+    // Encuentra el elemento del contador más cercano
+    var contador = btn.closest('.counter-container').querySelector('.counter');
+    var valorActual = parseInt(contador.textContent, 10);
+    
+    // Actualiza el contador con el cambio
+    var nuevoValor = valorActual + cambio;
+    nuevoValor = Math.max(0, nuevoValor); // Asegura que no sea negativo
+    contador.textContent = nuevoValor;
+}
 
+var cantidadAgregada;
+var cantidadTotalCarrito = 0;
+function agregarAlCarrito(btn) {
+    var contadorProducto = btn.closest('.counter-container').querySelector('.counter');
+    //elemento padre de la información del producto
+    var menuCard = btn.closest('.menu-card');
+
+    var contadorProducto = menuCard.querySelector('.counter');
+    cantidad = parseInt(contadorProducto.textContent, 10);
+    //actualiza el numero en el carrito del nav y reinicia el contador
+    cartItemCount = document.getElementById('cartItemCount');
+    cartItemCount.textContent = parseInt(cartItemCount.textContent, 10) + cantidad;
+    cantidadTotalCarrito = parseInt(cartItemCount.textContent, 10);
+    cantidadAgregada = cantidad;
+    contadorProducto.textContent = '0';
+    
+    // Estilos y notificación
+    cartItemCount.style.backgroundColor = 'red';
+    cartItemCount.style.padding = '6px 10px';
+
+   
+
+    // Restablecer el estilo 
+    setTimeout(function () {
+        cartItemCount.style.backgroundColor = '#fa7f01';
+        cartItemCount.style.padding = '';
+    }, 1000);
+
+    return cantidad;
+}
+
+
+function mostrarNotificacion(mensaje) {
+    var notification = document.createElement('div');
+    notification.classList.add('notification');
+    notification.textContent = mensaje;
+
+    // Agrega la notificación 
+    document.body.appendChild(notification);
+
+    // Elimina la notificación 
+    setTimeout(function () {
+        notification.remove();
+    }, 2000); // 
+}
 
 
 const btncarro = document.querySelectorAll('.menu-btn-carro');
@@ -121,37 +91,57 @@ function addToCartClicked(event) {
     const itemPrice = item.querySelector('.item-price').textContent;
     const itemImg = item.querySelector('.item-img').src;
 
-    addItemCart(itemTitle, itemPrice, itemImg);
-    
+   if (cantidadAgregada == 0) {
+    alert("ingrese una cantidad")
+   } else {
+    addItemCart(itemTitle, itemPrice, itemImg, cantidadAgregada);
+    mostrarNotificacion('Producto agregado');
+   }
 }
 
+
+var total=0;
 function addItemCart(itemTitle, itemPrice, itemImg) {
     const cartItemList = document.getElementById('cartItemList');
-
+    const totalFinal = document.getElementById('totalFinal');
     // Verificar si el producto ya está en el carrito
     const existingItem = cartItemList.querySelector(`[data-title="${itemTitle}"]`);
     if (existingItem) {
         const quantityElement = existingItem.querySelector('.cart-item-quantity');
-        const quantity = parseInt(quantityElement.textContent) + 1;
+        const quantity = parseInt(quantityElement.textContent) + cantidadAgregada;
         quantityElement.textContent = quantity;
+
+        const totalElement = existingItem.querySelector('.cart-item-price');
+        const totalPrice = parseFloat(itemPrice.replace('$', '')) * quantity; // Suponiendo que el precio tiene el formato $x.xx
+        totalElement.textContent = `Sub-Total: $${totalPrice.toFixed(2)}`;
+
+        total+=parseFloat(itemPrice.replace('$', '')) * cantidadAgregada;
     } else {
         const li = document.createElement('li');
         li.dataset.title = itemTitle;
 
         li.innerHTML = `
-            <img src="${itemImg}" alt="" class="cart-item-img" style="width: 50px; height: 50px;">
-            <span class="cart-item-title">${itemTitle}</span>
-            <span class="cart-item-price">${itemPrice}</span>
-            <span class="cart-item-quantity">1</span>
+        <img src="${itemImg}" alt="" class="cart-item-img rounded-circle" style="width: 50px; height: 50px;">
+        <span class="cart-item-details">
+        <span class="cart-item-quantity">${cantidadAgregada} - </span>
+        <span class="cart-item-title">${itemTitle} x (8u) --- precio unitario: ${itemPrice}</span>
+        <span class="cart-item-price">Sub-Total: $${(parseFloat(itemPrice.replace('$', '')) * cantidadAgregada).toFixed(2)}</span>
+        <span class="linea"></span>
+        </span>
         `;
-
+        total+=parseFloat(itemPrice.replace('$', '')) * cantidadAgregada;
         cartItemList.appendChild(li);
     }
+    totalFinal.textContent = `TOTAL: $${total.toFixed(2)}`;
+    console.log(total)
 }
 
+
 //formulario compra
+
 document.getElementById('paymentForm').addEventListener('submit', function(event) {
     event.preventDefault();
+    
     
     var paymentMethod = document.getElementById('paymentMethod').value;
     

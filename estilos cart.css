@@ -1,4 +1,36 @@
-.modal-header h1{
-    align-content: center;
-    justify-content: center;
-}
+/*estilos del carrito de compras*/
+
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.384);
+    font-family: 'Didact Gothic', sans-serif;
+  }
+  
+  .modal-header {
+    background-color: #1571d4a2;
+    color: white;
+  }
+  
+  .cart-item-price{
+      display: flex;
+      align-items:flex-end;
+      font-size: 14px;
+  }
+  .cart-item-title, .cart-item-quantity{
+      font-size: 14px;
+  }
+  .total-final{
+   width: 100%;
+   text-align: center;
+   font-size: 16px;
+   font-weight: bold;
+  }
+  .cart-item-details .linea {
+    border-bottom:groove;
+    height: 1px; 
+    width: 100%; 
+    display: block; 
+    margin: 2px 0 10px; 
+  }
+
+ 
