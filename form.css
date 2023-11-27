@@ -5,6 +5,7 @@
 .modal-carrito .form {
     display: block;
     margin: 0 auto;
+    height: 400px;
     width: 400px;
     background-color: #ff8800;
     color: black;
@@ -58,6 +59,7 @@
     display: block;
     margin-bottom: 10px;
     width: 100%;
+
 }
 .modal-carrito .form #cerrarBtn{
     text-align: center;
